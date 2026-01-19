@@ -68,6 +68,7 @@ ol {
 .result__video {
   width: 100%;
   object-fit: fill;
+  height: 386px;
 }
 
 .search-form__fieldset-title {
@@ -103,15 +104,13 @@ ol {
 }
 
 .content__list-container {
-  height: 300px;
-  overflow-y: scroll;
-  position: relative;
-}
-
-.content__list-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  height: 300px;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
 }
 
 .content__list {
@@ -149,11 +148,8 @@ ol {
   line-height: 16.2px;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-clamp: 3;
-}
-
-.content__card-link {
-  text-decoration: none;
+  /* line-clamp: 3; */
+  -webkit-line-clamp: 3;
 }
 
 .content__video-card-thumbnail {
@@ -183,7 +179,6 @@ ol {
   display: flex;
   align-items: center;
   gap: 5px;
-  width: fit-content;
   padding: 2px;
 }
 
@@ -198,6 +193,7 @@ ol {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: normal;
+  field-sizing: content;
 }
 
 .search-form__textfield:focus {
@@ -224,12 +220,13 @@ ol {
   opacity: 0;
 }
 
-.search-form__checkbox:checked {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   opacity: 1;
 }
 
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
+  text-decoration-thickness: 5%;
 }
 
 .search-form__label:has(.search-form__checkbox:focus-visible) {
@@ -256,11 +253,7 @@ ol {
   padding: 6px 0px;
 }
 
-.search-form__submit-button {
-  text-decoration: underline;
-}
-
-.search-form__submit-button:active {
+.button:active {
   background-color: #545050;
 }
 
@@ -268,12 +261,17 @@ ol {
   outline: none;
 }
 
-.search-form__submit-button:focus-visible {
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
 .content__card-link {
+  text-decoration: none;
   display: block;
 }
 
@@ -287,6 +285,7 @@ ol {
 
 .content__card-link:hover {
   text-decoration: underline;
+  text-decoration-thickness: 5%;
   text-decoration-color: #fff;
 }
 
@@ -302,7 +301,7 @@ ol {
   padding: 0px 3px;
 }
 
-.search-form__pseudo-checkbox,
+.search-form__label,
 .button,
 .content__card-link {
   cursor: pointer;
