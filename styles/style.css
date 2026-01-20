@@ -62,19 +62,18 @@ ol {
 .result__video-container {
   position: relative;
   width: 711px;
-  margin-bottom: 16px;
 }
 
 .result__video {
   width: 100%;
   object-fit: fill;
   height: 386px;
+  margin-bottom: 10px;
 }
 
 .search-form__fieldset-title {
   font-weight: normal;
   font-size: 18px;
-  margin-bottom: 5px;
   font-family: "Fira Sans Condensed", sans-serif;
 }
 
@@ -163,12 +162,12 @@ ol {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
 }
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 15px;
+  gap: 11px;
 }
 
 .search-form__fieldset {
@@ -180,6 +179,7 @@ ol {
   align-items: center;
   gap: 5px;
   padding: 2px;
+  width: fit-content;
 }
 
 .search-form__textfield {
@@ -193,7 +193,7 @@ ol {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: normal;
-  field-sizing: content;
+  min-width: 225px;
 }
 
 .search-form__textfield:focus {
@@ -246,6 +246,7 @@ ol {
   width: 194px;
   align-self: flex-end;
   padding: 6px 0px;
+  margin: 0 0 2px 2px;
 }
 
 .more-button {
@@ -312,7 +313,7 @@ ol {
   inline-size: 1px;
   block-size: 1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   white-space: nowrap;
 }
